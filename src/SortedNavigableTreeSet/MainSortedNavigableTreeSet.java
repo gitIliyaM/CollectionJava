@@ -4,9 +4,9 @@ import java.util.Scanner;
 
 public class MainSortedNavigableTreeSet {
     public static void main(String[] args) {
-        System.out.println("Необходимо вводить имена студентов, класс (с 1 по 11 с буквами а,б,в,г - 1а или 5в)," +
-                " возраст, успеваемость с 1 по 5 оценки");
-        System.out.println("Прекратить заполнение данных - написать: Да или Нет");
+        System.out.println("РќРµРѕР±С…РѕРґРёРјРѕ РІРІРѕРґРёС‚СЊ РёРјРµРЅР° СЃС‚СѓРґРµРЅС‚РѕРІ, РєР»Р°СЃСЃ (СЃ 1 РїРѕ 11 СЃ Р±СѓРєРІР°РјРё Р°,Р±,РІ,Рі - 1Р° РёР»Рё 5РІ)," +
+                " РІРѕР·СЂР°СЃС‚, СѓСЃРїРµРІР°РµРјРѕСЃС‚СЊ СЃ 1 РїРѕ 5 РѕС†РµРЅРєРё");
+        System.out.println("РџСЂРµРєСЂР°С‚РёС‚СЊ Р·Р°РїРѕР»РЅРµРЅРёРµ РґР°РЅРЅС‹С… - РЅР°РїРёСЃР°С‚СЊ: Р”Р° РёР»Рё РќРµС‚");
         Scanner scanner = new Scanner(System.in);
         String userYesNo = "";
 
@@ -20,18 +20,18 @@ public class MainSortedNavigableTreeSet {
             text();
 
             userYesNo = scanner.nextLine();
-            if(userYesNo.equals("Да")){
-                System.out.println("Напишите по какому параметру сортировать!");
+            if(userYesNo.equals("Р”Р°")){
+                System.out.println("РќР°РїРёС€РёС‚Рµ РїРѕ РєР°РєРѕРјСѓ РїР°СЂР°РјРµС‚СЂСѓ СЃРѕСЂС‚РёСЂРѕРІР°С‚СЊ!");
                 parameter = scanner.nextLine();
                 switch (parameter){
-                    case "имя", "класс", "успеваемость", "возраст": Student.setInfoStudents(name, classroom, grade, age, parameter);break;
+                    case "РёРјСЏ", "РєР»Р°СЃСЃ", "СѓСЃРїРµРІР°РµРјРѕСЃС‚СЊ", "РІРѕР·СЂР°СЃС‚": Student.setInfoStudents(name, classroom, grade, age, parameter);break;
                 }
             } else {
                 Student.setInfoStudents(name, classroom, grade, age, parameter);
             }
-            System.out.println("Прекратить заполнение данных - Да или Нет");
+            System.out.println("РџСЂРµРєСЂР°С‚РёС‚СЊ Р·Р°РїРѕР»РЅРµРЅРёРµ РґР°РЅРЅС‹С… - Р”Р° РёР»Рё РќРµС‚");
             userYesNo = scanner.nextLine();
-        } while (!userYesNo.equals("Да"));
+        } while (!userYesNo.equals("Р”Р°"));
 
         for(Student student: Student.arrayList){
             System.out.println(student);
@@ -41,29 +41,29 @@ public class MainSortedNavigableTreeSet {
         }
     }
     static String name(){
-        System.out.println("Напишите имя студента");
+        System.out.println("РќР°РїРёС€РёС‚Рµ РёРјСЏ СЃС‚СѓРґРµРЅС‚Р°");
         String nameStudent = new Scanner(System.in).nextLine();
         return nameStudent;
     }
     static String classroom(){
-        System.out.println("Напишите класс студента");
+        System.out.println("РќР°РїРёС€РёС‚Рµ РєР»Р°СЃСЃ СЃС‚СѓРґРµРЅС‚Р°");
         String classroomStudent = new Scanner(System.in).nextLine();
         return classroomStudent;
     }
     static int grade(){
-        System.out.println("Напишите успеваемость студента");
+        System.out.println("РќР°РїРёС€РёС‚Рµ СѓСЃРїРµРІР°РµРјРѕСЃС‚СЊ СЃС‚СѓРґРµРЅС‚Р°");
         int gradeStudent = new Scanner(System.in).nextInt();
         return gradeStudent;
     }
     static int age(){
-        System.out.println("Напишите возраст студента");
+        System.out.println("РќР°РїРёС€РёС‚Рµ РІРѕР·СЂР°СЃС‚ СЃС‚СѓРґРµРЅС‚Р°");
         int ageStudent= new Scanner(System.in).nextInt();
         return ageStudent;
     }
     static void text(){
-        System.out.println("Сортировка происходит по слово(параметру)-  Имя, Класс, Успеваемость, Возраст");
-        System.out.println("Необходимо написано слово - имя или класс или успеваемость или возраст");
-        System.out.println("Писать имена студентов или класс или....., не надо!");
-        System.out.println("Сортировать данные - Да или Нет");
+        System.out.println("РЎРѕСЂС‚РёСЂРѕРІРєР° РїСЂРѕРёСЃС…РѕРґРёС‚ РїРѕ СЃР»РѕРІРѕ(РїР°СЂР°РјРµС‚СЂСѓ)-  РРјСЏ, РљР»Р°СЃСЃ, РЈСЃРїРµРІР°РµРјРѕСЃС‚СЊ, Р’РѕР·СЂР°СЃС‚");
+        System.out.println("РќРµРѕР±С…РѕРґРёРјРѕ РЅР°РїРёСЃР°РЅРѕ СЃР»РѕРІРѕ - РёРјСЏ РёР»Рё РєР»Р°СЃСЃ РёР»Рё СѓСЃРїРµРІР°РµРјРѕСЃС‚СЊ РёР»Рё РІРѕР·СЂР°СЃС‚");
+        System.out.println("РџРёСЃР°С‚СЊ РёРјРµРЅР° СЃС‚СѓРґРµРЅС‚РѕРІ РёР»Рё РєР»Р°СЃСЃ РёР»Рё....., РЅРµ РЅР°РґРѕ!");
+        System.out.println("РЎРѕСЂС‚РёСЂРѕРІР°С‚СЊ РґР°РЅРЅС‹Рµ - Р”Р° РёР»Рё РќРµС‚");
     }
 }
