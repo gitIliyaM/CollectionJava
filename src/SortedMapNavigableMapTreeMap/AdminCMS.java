@@ -11,7 +11,7 @@ public class AdminCMS {
     HashMap<String,String> hashMapPrice = new HashMap<>();
 
     void setDataCMS(){
-        System.out.println("Введите артикул из 7 букв, наименование из 12 букв, цену товара из 6 букв");
+        System.out.println("Р’РІРµРґРёС‚Рµ Р°СЂС‚РёРєСѓР» РёР· 7 Р±СѓРєРІ, РЅР°РёРјРµРЅРѕРІР°РЅРёРµ РёР· 12 Р±СѓРєРІ, С†РµРЅСѓ С‚РѕРІР°СЂР° РёР· 6 Р±СѓРєРІ");
 
         String article = getArticle();
 
@@ -24,58 +24,58 @@ public class AdminCMS {
             hashMapName.put(article,name);
             hashMapPrice.put(article,price);
         } else {
-            System.out.println("Введенный артикул в базе существует, введите новый");
+            System.out.println("Р’РІРµРґРµРЅРЅС‹Р№ Р°СЂС‚РёРєСѓР» РІ Р±Р°Р·Рµ СЃСѓС‰РµСЃС‚РІСѓРµС‚, РІРІРµРґРёС‚Рµ РЅРѕРІС‹Р№");
             setDataCMS();
         }
     }
     boolean checkDataCMS(){
         if(SortedMapArticle.isEmpty()){
-            System.out.println("База артикулов пустая!");
+            System.out.println("Р‘Р°Р·Р° Р°СЂС‚РёРєСѓР»РѕРІ РїСѓСЃС‚Р°СЏ!");
             return false;
         } else {
             return true;
         }
     }
     void deleteDataCMS(){
-        System.out.println("Введите артикул из 7 букв");
+        System.out.println("Р’РІРµРґРёС‚Рµ Р°СЂС‚РёРєСѓР» РёР· 7 Р±СѓРєРІ");
         String article = getArticle();
         SortedMapArticle.remove(article);
     }
     String getArticle() {
-        System.out.println("Артикул:");
+        System.out.println("РђСЂС‚РёРєСѓР»:");
         String article = new Scanner(System.in).nextLine();
         while(article.length()>7){
-            System.out.println("Длина артикула больше 7 букв повторите ввод");
+            System.out.println("Р”Р»РёРЅР° Р°СЂС‚РёРєСѓР»Р° Р±РѕР»СЊС€Рµ 7 Р±СѓРєРІ РїРѕРІС‚РѕСЂРёС‚Рµ РІРІРѕРґ");
             article = getArticle();
         }
         while(article.equals("")){
-            System.out.println("Не ввели артикул повторите ввод");
+            System.out.println("РќРµ РІРІРµР»Рё Р°СЂС‚РёРєСѓР» РїРѕРІС‚РѕСЂРёС‚Рµ РІРІРѕРґ");
             article = getArticle();
         }
         return article;
     }
     String getName(){
-        System.out.println("Наименование:");
+        System.out.println("РќР°РёРјРµРЅРѕРІР°РЅРёРµ:");
         String name = new Scanner(System.in).nextLine();
         while(name.length()>12){
-            System.out.println("Длина слова больше 12 букв повторите ввод");
+            System.out.println("Р”Р»РёРЅР° СЃР»РѕРІР° Р±РѕР»СЊС€Рµ 12 Р±СѓРєРІ РїРѕРІС‚РѕСЂРёС‚Рµ РІРІРѕРґ");
             name = getName();
         }
         while(name.equals("")){
-            System.out.println("Не ввели слово повторите ввод");
+            System.out.println("РќРµ РІРІРµР»Рё СЃР»РѕРІРѕ РїРѕРІС‚РѕСЂРёС‚Рµ РІРІРѕРґ");
             name = getName();
         }
         return name;
     }
     String getPrice(){
-        System.out.println("Цена:");
+        System.out.println("Р¦РµРЅР°:");
         String price = new Scanner(System.in).nextLine();
         while(price.length()>6){
-            System.out.println("Длина цены больше 6 цифр повторите ввод");
+            System.out.println("Р”Р»РёРЅР° С†РµРЅС‹ Р±РѕР»СЊС€Рµ 6 С†РёС„СЂ РїРѕРІС‚РѕСЂРёС‚Рµ РІРІРѕРґ");
             price = getPrice();
         }
         while(price.equals("")){
-            System.out.println("Не ввели цену повторите ввод");
+            System.out.println("РќРµ РІРІРµР»Рё С†РµРЅСѓ РїРѕРІС‚РѕСЂРёС‚Рµ РІРІРѕРґ");
             price = getPrice();
         }
         return price;
