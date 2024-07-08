@@ -7,25 +7,25 @@ import java.util.Scanner;
 public class AccountInetMag {
     HashMap<String, String> hashMapPhonesPasswords = new HashMap<>();
     ArrayList<String> arrayListAllData = new ArrayList<>();
-    void setUserEntry() { // Вывод талицы ЛК - инициализация
+    void setUserEntry() { // Р’С‹РІРѕРґ С‚Р°Р»РёС†С‹ Р›Рљ - РёРЅРёС†РёР°Р»РёР·Р°С†РёСЏ
         System.out.println();
-        System.out.println("Регистрация/Авторизация личного кабинета");
-        System.out.println("Напишите номер телефона");
+        System.out.println("Р РµРіРёСЃС‚СЂР°С†РёСЏ/РђРІС‚РѕСЂРёР·Р°С†РёСЏ Р»РёС‡РЅРѕРіРѕ РєР°Р±РёРЅРµС‚Р°");
+        System.out.println("РќР°РїРёС€РёС‚Рµ РЅРѕРјРµСЂ С‚РµР»РµС„РѕРЅР°");
         String userPhoneNumber = new Scanner(System.in).next();
-        System.out.println("....и пароль");
+        System.out.println("....Рё РїР°СЂРѕР»СЊ");
         String userPass = new Scanner(System.in).next();
-        System.out.println("Передумали? напишите - Да, или Нет");
+        System.out.println("РџРµСЂРµРґСѓРјР°Р»Рё? РЅР°РїРёС€РёС‚Рµ - Р”Р°, РёР»Рё РќРµС‚");
         String userExit = new Scanner(System.in).next();
 
-        if(!getYesOrNot(userExit)){ // прерывание регистрации
-            System.out.println("Вышли из ЛК");
-        } else if(!hashMapPhonesPasswords.containsKey(userPhoneNumber) && !hashMapPhonesPasswords.containsValue(userPass)){ // регистрация нового ЛК
+        if(!getYesOrNot(userExit)){ // РїСЂРµСЂС‹РІР°РЅРёРµ СЂРµРіРёСЃС‚СЂР°С†РёРё
+            System.out.println("Р’С‹С€Р»Рё РёР· Р›Рљ");
+        } else if(!hashMapPhonesPasswords.containsKey(userPhoneNumber) && !hashMapPhonesPasswords.containsValue(userPass)){ // СЂРµРіРёСЃС‚СЂР°С†РёСЏ РЅРѕРІРѕРіРѕ Р›Рљ
             hashMapPhonesPasswords.put(userPhoneNumber, userPass);
             setUserInfo(userPhoneNumber, userPass);
             System.out.println();
-            System.out.println("Вы зарегистрированы!");
+            System.out.println("Р’С‹ Р·Р°СЂРµРіРёСЃС‚СЂРёСЂРѕРІР°РЅС‹!");
         } else {
-            for(String arrayKey: arrayListAllData){ // вход в ЛК ранее созданного пользователя
+            for(String arrayKey: arrayListAllData){ // РІС…РѕРґ РІ Р›Рљ СЂР°РЅРµРµ СЃРѕР·РґР°РЅРЅРѕРіРѕ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ
                 if(arrayKey.contains(userPhoneNumber) && arrayKey.contains(userPass)){
                     setAndPrintUserInfo(getEmail(arrayKey),userPass,getName(arrayKey),getSecName(arrayKey),userPhoneNumber);
                     break;
@@ -35,21 +35,21 @@ public class AccountInetMag {
     }
     // setAndPrintUserInfo(String emailUser, String userPass, String nameUser, String secondNameUser, String userPhoneNumber)
 
-    // ("телефон- "+userPhoneNumber+" email-  "+emailUser+" пароль- "+userPass+" имя-    "+nameUser+" фамилия-"+secondNameUser)
+    // ("С‚РµР»РµС„РѕРЅ- "+userPhoneNumber+" email-  "+emailUser+" РїР°СЂРѕР»СЊ- "+userPass+" РёРјСЏ-    "+nameUser+" С„Р°РјРёР»РёСЏ-"+secondNameUser)
     String getSecName(String arrayKey){
-        int indexSecNameStart = arrayKey.indexOf(" фамилия-")+" фамилия-".length();
+        int indexSecNameStart = arrayKey.indexOf(" С„Р°РјРёР»РёСЏ-")+" С„Р°РјРёР»РёСЏ-".length();
         String secNameUser = arrayKey.substring(indexSecNameStart);
         return secNameUser;
     }
     String getName(String arrayKey){
-        int indexNameSart = arrayKey.indexOf(" имя-    ")+" имя-    ".length();
-        int indexNameEnd = arrayKey.indexOf(" фамилия-");
+        int indexNameSart = arrayKey.indexOf(" РёРјСЏ-    ")+" РёРјСЏ-    ".length();
+        int indexNameEnd = arrayKey.indexOf(" С„Р°РјРёР»РёСЏ-");
         String nameUser = arrayKey.substring(indexNameSart,indexNameEnd);
         return nameUser;
     }
     String getEmail(String arrayKey){
         int indexEmailSart = arrayKey.indexOf(" email-  ")+" email-  ".length();
-        int indexEmailEnd = arrayKey.indexOf(" пароль- ");
+        int indexEmailEnd = arrayKey.indexOf(" РїР°СЂРѕР»СЊ- ");
         String emailUser = arrayKey.substring(indexEmailSart,indexEmailEnd);
         return emailUser;
     }
@@ -68,18 +68,18 @@ public class AccountInetMag {
         }
     }
     boolean getYesOrNot(String userExit){
-        if(userExit.equals("Нет") || userExit.equals("нет")){
+        if(userExit.equals("РќРµС‚") || userExit.equals("РЅРµС‚")){
             return true;
         } else {
             return false;
         }
     }
-    void setUserLKMenu(){ // Текст - Личный кабинет
+    void setUserLKMenu(){ // РўРµРєСЃС‚ - Р›РёС‡РЅС‹Р№ РєР°Р±РёРЅРµС‚
         System.out.println();
         for(int i=0; i<70; i++){
             switch (i){
                 case 0,56 : System.out.print("|");break;
-                case 25   : System.out.print("Личный кабинет");break;
+                case 25   : System.out.print("Р›РёС‡РЅС‹Р№ РєР°Р±РёРЅРµС‚");break;
                 default   : System.out.print(" ");
             }
         }
@@ -90,31 +90,31 @@ public class AccountInetMag {
             System.out.print("-");
         }
     }
-    void setLKSubMenu(){ // Текст с информацией
+    void setLKSubMenu(){ // РўРµРєСЃС‚ СЃ РёРЅС„РѕСЂРјР°С†РёРµР№
         for(int i=0; i<70; i++){
             switch (i){
                 case 0,45 : System.out.print("|");break;
                 case 5   : System.out.print("E-mail");break;
-                case 13   : System.out.print("Пароль");break;
-                case 21   : System.out.print("Имя");break;
-                case 28   : System.out.print("Фамилия");break;
-                case 36   : System.out.print("Телефон");break;
+                case 13   : System.out.print("РџР°СЂРѕР»СЊ");break;
+                case 21   : System.out.print("РРјСЏ");break;
+                case 28   : System.out.print("Р¤Р°РјРёР»РёСЏ");break;
+                case 36   : System.out.print("РўРµР»РµС„РѕРЅ");break;
                 default   : System.out.print(" ");
             }
         }
     }
     void setUserInfo(String userPhoneNumber, String userPass){
         System.out.println();
-        System.out.println("Напишите вашу эл.почту - 12 букв");
+        System.out.println("РќР°РїРёС€РёС‚Рµ РІР°С€Сѓ СЌР».РїРѕС‡С‚Сѓ - 12 Р±СѓРєРІ");
         String emailUser = new Scanner(System.in).nextLine();
         System.out.println();
-        System.out.println("Напишите ваше Имя - 12 букв");
+        System.out.println("РќР°РїРёС€РёС‚Рµ РІР°С€Рµ РРјСЏ - 12 Р±СѓРєРІ");
         String nameUser = new Scanner(System.in).nextLine();
         System.out.println();
-        System.out.println("Напишите вашу Фамилию - 8 букв");
+        System.out.println("РќР°РїРёС€РёС‚Рµ РІР°С€Сѓ Р¤Р°РјРёР»РёСЋ - 8 Р±СѓРєРІ");
         String secondNameUser = new Scanner(System.in).nextLine();
 
-        arrayListAllData.add("телефон- "+userPhoneNumber+" email-  "+emailUser+" пароль- "+userPass+" имя-    "+nameUser+" фамилия-"+secondNameUser);
+        arrayListAllData.add("С‚РµР»РµС„РѕРЅ- "+userPhoneNumber+" email-  "+emailUser+" РїР°СЂРѕР»СЊ- "+userPass+" РёРјСЏ-    "+nameUser+" С„Р°РјРёР»РёСЏ-"+secondNameUser);
 
         setAndPrintUserInfo(emailUser,userPass,nameUser,secondNameUser,userPhoneNumber);
     }
@@ -128,7 +128,7 @@ public class AccountInetMag {
 
         MainInetMag.mainMenu();
         setUserLKMenu();
-            // Вывод на просмотр
+            // Р’С‹РІРѕРґ РЅР° РїСЂРѕСЃРјРѕС‚СЂ
         System.out.println();
         for(int i=0; i<70; i++){
             if(i==0){
