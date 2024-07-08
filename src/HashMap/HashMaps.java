@@ -11,21 +11,21 @@ public class HashMaps {
 
     //HashMap<String, Integer> hashMapGrades = new HashMap<>();
     String password() {
-        System.out.println("Напишите пароль");
+        System.out.println("РќР°РїРёС€РёС‚Рµ РїР°СЂРѕР»СЊ");
         Scanner scanner = new Scanner(System.in);
         String textPassword = scanner.nextLine();
         return textPassword;
     }
 
     String name() {
-        System.out.println("Напишите ваше Имя");
+        System.out.println("РќР°РїРёС€РёС‚Рµ РІР°С€Рµ РРјСЏ");
         Scanner scanner = new Scanner(System.in);
         String textName = scanner.nextLine();
         return textName;
     }
 
     int grade() {
-        System.out.println("Напишите вашу оценку");
+        System.out.println("РќР°РїРёС€РёС‚Рµ РІР°С€Сѓ РѕС†РµРЅРєСѓ");
         Scanner scanner = new Scanner(System.in);
         int intGrade = scanner.nextInt();
         return intGrade;
@@ -43,20 +43,20 @@ public class HashMaps {
 
                 hashMapPass.put(textPassword, textPassword);
                 hashMapNames.put(textPassword, textName);
-                arrayList.add("пароль " + textPassword + " имя " + textName + " оценка " + intGrade);
-                System.out.println("Ваши данные сохранены");
+                arrayList.add("РїР°СЂРѕР»СЊ " + textPassword + " РёРјСЏ " + textName + " РѕС†РµРЅРєР° " + intGrade);
+                System.out.println("Р’Р°С€Рё РґР°РЅРЅС‹Рµ СЃРѕС…СЂР°РЅРµРЅС‹");
             } else if (userNewPassword) {
                 textPassword = hashMapPass.get(textPassword);
                 hashMapNames.put(textPassword, textName);
-                arrayList.add("пароль " + textPassword + " имя " + textName + " оценка " + intGrade);
-                System.out.println("Ваши данные сохранены");
+                arrayList.add("РїР°СЂРѕР»СЊ " + textPassword + " РёРјСЏ " + textName + " РѕС†РµРЅРєР° " + intGrade);
+                System.out.println("Р’Р°С€Рё РґР°РЅРЅС‹Рµ СЃРѕС…СЂР°РЅРµРЅС‹");
             }
         } else {
             hashMapPass.put(textPassword, textPassword);
             hashMapNames.put(textPassword, textName);
-            arrayList.add("пароль " + textPassword + " имя " + textName + " оценка " + intGrade);
+            arrayList.add("РїР°СЂРѕР»СЊ " + textPassword + " РёРјСЏ " + textName + " РѕС†РµРЅРєР° " + intGrade);
         }
-        if(MainHashMap.textMiddleGrade().equals("Да")){
+        if(MainHashMap.textMiddleGrade().equals("Р”Р°")){
             getMiddleGrade(arrayList, hashMapPass, hashMapNames);
         }
     }
@@ -71,13 +71,13 @@ public class HashMaps {
         if (hashMapPass.containsKey(textPassword) && hashMapNames.containsKey(textPassword)) {
             for (String textArrayList : arrayList) {
                 if (textArrayList.contains(textPassword) && textArrayList.contains(textName)) {
-                    int indexGrade = textArrayList.indexOf("оценка") + "оценка".length()+1;
+                    int indexGrade = textArrayList.indexOf("РѕС†РµРЅРєР°") + "РѕС†РµРЅРєР°".length()+1;
                     int grade = Integer.parseInt(textArrayList.substring(indexGrade));
                     counterGrade = counterGrade + grade;
                     counter++;
                 }
             }
-            System.out.println("Средняя оценка студента "+textName+" равна = "+counterGrade/counter);
+            System.out.println("РЎСЂРµРґРЅСЏСЏ РѕС†РµРЅРєР° СЃС‚СѓРґРµРЅС‚Р° "+textName+" СЂР°РІРЅР° = "+counterGrade/counter);
         }
     }
 }
