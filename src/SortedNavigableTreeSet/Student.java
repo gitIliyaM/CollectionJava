@@ -22,8 +22,8 @@ public class Student implements Comparator<Student> {
         treeSet.add(name);
         FilterStudents filterStudents = new FilterStudents();
         switch (parameter){
-    // Collections.sort(arrayList, filterStudents) или Collections.sort(arrayList, student) или Collections.sort(arrayList, new FilterStudents());
-            case "имя", "класс", "успеваемость", "возраст": Collections.sort(arrayList, filterStudents);
+    // Collections.sort(arrayList, filterStudents) РёР»Рё Collections.sort(arrayList, student) РёР»Рё Collections.sort(arrayList, new FilterStudents());
+            case "РёРјСЏ", "РєР»Р°СЃСЃ", "СѓСЃРїРµРІР°РµРјРѕСЃС‚СЊ", "РІРѕР·СЂР°СЃС‚": Collections.sort(arrayList, filterStudents);
                 break;
         }
     }
@@ -39,10 +39,10 @@ public class Student implements Comparator<Student> {
     @Override
     public int compare(Student o1, Student o2) {
         switch (parameters){
-            case "имя"          : return o1.name.compareTo(o2.name);
-            case "класс"        : return o1.classroom.compareTo(o2.classroom);
-            case "успеваемость" : return o1.grade - o2.grade;
-            case "возраст"      : return o1.age - o2.age;
+            case "РёРјСЏ"          : return o1.name.compareTo(o2.name);
+            case "РєР»Р°СЃСЃ"        : return o1.classroom.compareTo(o2.classroom);
+            case "СѓСЃРїРµРІР°РµРјРѕСЃС‚СЊ" : return o1.grade - o2.grade;
+            case "РІРѕР·СЂР°СЃС‚"      : return o1.age - o2.age;
         }
         return 0;
     }
@@ -53,10 +53,10 @@ public class Student implements Comparator<Student> {
         @Override
         public int compare(Student o1, Student o2){
             switch (parameters){
-                case "имя"          : return o1.name.compareTo(o2.name);
-                case "класс"        : return o1.classroom.compareTo(o2.classroom);
-                case "успеваемость" : return o1.grade - o2.grade;
-                case "возраст"      : return o1.age - o2.age;
+                case "РёРјСЏ"          : return o1.name.compareTo(o2.name);
+                case "РєР»Р°СЃСЃ"        : return o1.classroom.compareTo(o2.classroom);
+                case "СѓСЃРїРµРІР°РµРјРѕСЃС‚СЊ" : return o1.grade - o2.grade;
+                case "РІРѕР·СЂР°СЃС‚"      : return o1.age - o2.age;
             }
             return 0;
         }
