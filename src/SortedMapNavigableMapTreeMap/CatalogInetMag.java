@@ -3,7 +3,7 @@ package SortedMapNavigableMapTreeMap;
 import java.util.*;
 
 public class CatalogInetMag {
-    // убрал hashMapGoods - вместо нее вызываю - shopCart.getHashMapAddedGoods()
+    // СѓР±СЂР°Р» hashMapGoods - РІРјРµСЃС‚Рѕ РЅРµРµ РІС‹Р·С‹РІР°СЋ - shopCart.getHashMapAddedGoods()
     // getTableGoods(hashMapArticle, hashMapName, hashMapPrice, shopCart.getHashMapAddedGoods())
 
     //HashMap<String,String> hashMapGoods = new HashMap<>();
@@ -16,7 +16,7 @@ public class CatalogInetMag {
         for(int i=0; i<70; i++){
             switch (i){
                 case 0,55 : System.out.print("|");break;
-                case 25   : System.out.print("Каталог товаров");break;
+                case 25   : System.out.print("РљР°С‚Р°Р»РѕРі С‚РѕРІР°СЂРѕРІ");break;
                 default   : System.out.print(" ");
             }
         }
@@ -31,10 +31,10 @@ public class CatalogInetMag {
         for(int i=0; i<70; i++){
             switch (i){
                 case 0,32 : System.out.print("|");break;
-                case 5   : System.out.print("Артикул");break;
-                case 13   : System.out.print("Наименование");break;
-                case 21   : System.out.print("Цена");break;
-                case 28   : System.out.print("Добавить в корзину");break;
+                case 5   : System.out.print("РђСЂС‚РёРєСѓР»");break;
+                case 13   : System.out.print("РќР°РёРјРµРЅРѕРІР°РЅРёРµ");break;
+                case 21   : System.out.print("Р¦РµРЅР°");break;
+                case 28   : System.out.print("Р”РѕР±Р°РІРёС‚СЊ РІ РєРѕСЂР·РёРЅСѓ");break;
                 default   : System.out.print(" ");
             }
         }
@@ -52,7 +52,7 @@ public class CatalogInetMag {
                     System.out.print("|");
                 }
                 else if(i==20){
-                    System.out.print("товары не добавлены в каталог");
+                    System.out.print("С‚РѕРІР°СЂС‹ РЅРµ РґРѕР±Р°РІР»РµРЅС‹ РІ РєР°С‚Р°Р»РѕРі");
                 } else {
                     System.out.print(" ");
                 }
@@ -64,7 +64,7 @@ public class CatalogInetMag {
         } else if (shopCart.getTreeMapAddedGoods().isEmpty()) {
             for (String keys : cmsAdmin.getSortedMapArticle().keySet()) {
                 String valueKey = cmsAdmin.getSortedMapArticle().get(keys);
-                shopCart.getTreeMapAddedGoods().put(valueKey, "Товар не добавлен!");
+                shopCart.getTreeMapAddedGoods().put(valueKey, "РўРѕРІР°СЂ РЅРµ РґРѕР±Р°РІР»РµРЅ!");
             }
             getTableGoods(SortedMapArticle, hashMapName, hashMapPrice, shopCart.getTreeMapAddedGoods());
             shopCart.setGoodsBasket(cmsAdmin);
@@ -76,11 +76,11 @@ public class CatalogInetMag {
     }
     void getTableGoods(SortedMap<String,String> hashMapArticle,HashMap<String,String> hashMapName, HashMap<String,String> hashMapPrice, NavigableMap<String,String> NavigableMapAddGoods){
 
-        // в цикле for-each в выражении () указывать без типа Set - for (Map.Entry<String,String> setMapArticleName: hashMapArticleName.entrySet())
-        // вне цикла for-each указывать тип Set - Set<Map.Entry<String,String>> setMapArticleName =  hashMapArticleName.entrySet();
+        // РІ С†РёРєР»Рµ for-each РІ РІС‹СЂР°Р¶РµРЅРёРё () СѓРєР°Р·С‹РІР°С‚СЊ Р±РµР· С‚РёРїР° Set - for (Map.Entry<String,String> setMapArticleName: hashMapArticleName.entrySet())
+        // РІРЅРµ С†РёРєР»Р° for-each СѓРєР°Р·С‹РІР°С‚СЊ С‚РёРї Set - Set<Map.Entry<String,String>> setMapArticleName =  hashMapArticleName.entrySet();
 
-        // в цикле for-each в выражении () указывать без типа Set - for (String key = hashMapArticleName.keySet())
-        // аналогично для джинерик Строка - Set<String> key = hashMapArticleName.keySet();
+        // РІ С†РёРєР»Рµ for-each РІ РІС‹СЂР°Р¶РµРЅРёРё () СѓРєР°Р·С‹РІР°С‚СЊ Р±РµР· С‚РёРїР° Set - for (String key = hashMapArticleName.keySet())
+        // Р°РЅР°Р»РѕРіРёС‡РЅРѕ РґР»СЏ РґР¶РёРЅРµСЂРёРє РЎС‚СЂРѕРєР° - Set<String> key = hashMapArticleName.keySet();
 
         /* Set<Map.Entry<String,String>> setMapArticleName =  hashMapArticleName.entrySet();
            Set<Map.Entry<String,Integer>> sethMapArticlePrice =  hashMapArticlePrice.entrySet(); */
@@ -115,7 +115,7 @@ public class CatalogInetMag {
         int length = arrayArticles.size();
         int lItems;
         for(int j=0; j<length; j++){
-            // минусы это для цикла for он начинается с 0, чтобы не смог войти в оператор if
+            // РјРёРЅСѓСЃС‹ СЌС‚Рѕ РґР»СЏ С†РёРєР»Р° for РѕРЅ РЅР°С‡РёРЅР°РµС‚СЃСЏ СЃ 0, С‡С‚РѕР±С‹ РЅРµ СЃРјРѕРі РІРѕР№С‚Рё РІ РѕРїРµСЂР°С‚РѕСЂ if
             int counterName = -1,
                 counterPrice = -1,
                 counterBasket = -1,
@@ -124,21 +124,21 @@ public class CatalogInetMag {
             for(int i=0; i<70; i++){
                 if(i==0){
                     System.out.print("|");
-                } else if(i==5){ // необходимо убрать одно тире, чтобы все слова вставали в одну вертикальную линию можно без этого,
-                    // но придется вкладывать оператор if в if и так далее, получится не очень удобно читать
+                } else if(i==5){ // РЅРµРѕР±С…РѕРґРёРјРѕ СѓР±СЂР°С‚СЊ РѕРґРЅРѕ С‚РёСЂРµ, С‡С‚РѕР±С‹ РІСЃРµ СЃР»РѕРІР° РІСЃС‚Р°РІР°Р»Рё РІ РѕРґРЅСѓ РІРµСЂС‚РёРєР°Р»СЊРЅСѓСЋ Р»РёРЅРёСЋ РјРѕР¶РЅРѕ Р±РµР· СЌС‚РѕРіРѕ,
+                    // РЅРѕ РїСЂРёРґРµС‚СЃСЏ РІРєР»Р°РґС‹РІР°С‚СЊ РѕРїРµСЂР°С‚РѕСЂ if РІ if Рё С‚Р°Рє РґР°Р»РµРµ, РїРѕР»СѓС‡РёС‚СЃСЏ РЅРµ РѕС‡РµРЅСЊ СѓРґРѕР±РЅРѕ С‡РёС‚Р°С‚СЊ
                     System.out.print("");
                 } else {
                     System.out.print(" ");
                 }
                 if(i==5){
                     lItems = arrayArticles.get(j).length();
-                    lItems = 7-lItems;    // разница между = размер поля (Артикул) для слова и введенное слова
-                    counterName = lItems+i+7; // фиксация нового(следующего) слова - в поле Наименование.
-                    // Слово в поле артикул встает на 5 позиции,
-                    // поле Артикул размер = 7, разница между поле Артикул и словом дает нам пустые ячейки в не зависимости
-                    // от длины слов в поле Артикул, остается добавить эту разницу = размер поле Артикул - размер слова в этом поле
-                    // к позиции самого слова это = 5, плюс считаем ячейки от поля Артикул до поля Наименование = 7
-                    // складываем все эти значения = получается фиксация в поле Наименование. Для остальных слов аналогичные расчеты.
+                    lItems = 7-lItems;    // СЂР°Р·РЅРёС†Р° РјРµР¶РґСѓ = СЂР°Р·РјРµСЂ РїРѕР»СЏ (РђСЂС‚РёРєСѓР») РґР»СЏ СЃР»РѕРІР° Рё РІРІРµРґРµРЅРЅРѕРµ СЃР»РѕРІР°
+                    counterName = lItems+i+7; // С„РёРєСЃР°С†РёСЏ РЅРѕРІРѕРіРѕ(СЃР»РµРґСѓСЋС‰РµРіРѕ) СЃР»РѕРІР° - РІ РїРѕР»Рµ РќР°РёРјРµРЅРѕРІР°РЅРёРµ.
+                    // РЎР»РѕРІРѕ РІ РїРѕР»Рµ Р°СЂС‚РёРєСѓР» РІСЃС‚Р°РµС‚ РЅР° 5 РїРѕР·РёС†РёРё,
+                    // РїРѕР»Рµ РђСЂС‚РёРєСѓР» СЂР°Р·РјРµСЂ = 7, СЂР°Р·РЅРёС†Р° РјРµР¶РґСѓ РїРѕР»Рµ РђСЂС‚РёРєСѓР» Рё СЃР»РѕРІРѕРј РґР°РµС‚ РЅР°Рј РїСѓСЃС‚С‹Рµ СЏС‡РµР№РєРё РІ РЅРµ Р·Р°РІРёСЃРёРјРѕСЃС‚Рё
+                    // РѕС‚ РґР»РёРЅС‹ СЃР»РѕРІ РІ РїРѕР»Рµ РђСЂС‚РёРєСѓР», РѕСЃС‚Р°РµС‚СЃСЏ РґРѕР±Р°РІРёС‚СЊ СЌС‚Сѓ СЂР°Р·РЅРёС†Сѓ = СЂР°Р·РјРµСЂ РїРѕР»Рµ РђСЂС‚РёРєСѓР» - СЂР°Р·РјРµСЂ СЃР»РѕРІР° РІ СЌС‚РѕРј РїРѕР»Рµ
+                    // Рє РїРѕР·РёС†РёРё СЃР°РјРѕРіРѕ СЃР»РѕРІР° СЌС‚Рѕ = 5, РїР»СЋСЃ СЃС‡РёС‚Р°РµРј СЏС‡РµР№РєРё РѕС‚ РїРѕР»СЏ РђСЂС‚РёРєСѓР» РґРѕ РїРѕР»СЏ РќР°РёРјРµРЅРѕРІР°РЅРёРµ = 7
+                    // СЃРєР»Р°РґС‹РІР°РµРј РІСЃРµ СЌС‚Рё Р·РЅР°С‡РµРЅРёСЏ = РїРѕР»СѓС‡Р°РµС‚СЃСЏ С„РёРєСЃР°С†РёСЏ РІ РїРѕР»Рµ РќР°РёРјРµРЅРѕРІР°РЅРёРµ. Р”Р»СЏ РѕСЃС‚Р°Р»СЊРЅС‹С… СЃР»РѕРІ Р°РЅР°Р»РѕРіРёС‡РЅС‹Рµ СЂР°СЃС‡РµС‚С‹.
                     System.out.print(arrayArticles.get(j));
                 }
                 if(counterName==i){
@@ -156,7 +156,7 @@ public class CatalogInetMag {
                 if(counterBasket==i) {
 
                     String value = arrayArticles.get(j);
-                    // первый вариант
+                    // РїРµСЂРІС‹Р№ РІР°СЂРёР°РЅС‚
                     if(NavigableMapAddGoods.size()!=0){
                         for(Map.Entry<String,String> entry: NavigableMapAddGoods.entrySet()){
                             String key = entry.getKey();
@@ -171,18 +171,18 @@ public class CatalogInetMag {
                         if(hashMapAddGoods.containsKey(value)){
                             System.out.print(hashMapAddGoods.get(value));
                         } else {
-                            System.out.print("Товар не добавлен!");
+                            System.out.print("РўРѕРІР°СЂ РЅРµ РґРѕР±Р°РІР»РµРЅ!");
                         }
                     } else {
-                        System.out.print("Товар не добавлен!");
+                        System.out.print("РўРѕРІР°СЂ РЅРµ РґРѕР±Р°РІР»РµРЅ!");
                     }*/
 
                     /*if(hashMapAddGoods.containsKey(value)){
-                        System.out.print("Товар добавлен!   ");
+                        System.out.print("РўРѕРІР°СЂ РґРѕР±Р°РІР»РµРЅ!   ");
                     } else {
-                        System.out.print("Товар не добавлен!");
+                        System.out.print("РўРѕРІР°СЂ РЅРµ РґРѕР±Р°РІР»РµРЅ!");
                     }*/
-                    // второй вариант
+                    // РІС‚РѕСЂРѕР№ РІР°СЂРёР°РЅС‚
                     counterEnd = counterBasket + 3;
                 }
                 if(counterEnd==i){
