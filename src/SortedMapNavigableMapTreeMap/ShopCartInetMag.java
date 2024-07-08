@@ -12,17 +12,17 @@ public class ShopCartInetMag {
 
     String addGoodsToBasket() {
         System.out.println();
-        System.out.println("Напишите артикул товар добавится или удалится");
-        System.out.println("или напишите: нет");
+        System.out.println("РќР°РїРёС€РёС‚Рµ Р°СЂС‚РёРєСѓР» С‚РѕРІР°СЂ РґРѕР±Р°РІРёС‚СЃСЏ РёР»Рё СѓРґР°Р»РёС‚СЃСЏ");
+        System.out.println("РёР»Рё РЅР°РїРёС€РёС‚Рµ: РЅРµС‚");
         Scanner scanner = new Scanner(System.in);
         String goods = scanner.nextLine();
         return goods;
     }
 
-    void setGoodsBasket(AdminCMS cmsAdmin/*, HashMap<String,String> hashMapAddToBasket*/) { // убрал hashMapGoods из Catalog - hashMapAddToBasket не нужна
-        String enterArticle = addGoodsToBasket(); // "Напишите артикул товар добавится в корзину" "или напишите: Нет"//
+    void setGoodsBasket(AdminCMS cmsAdmin/*, HashMap<String,String> hashMapAddToBasket*/) { // СѓР±СЂР°Р» hashMapGoods РёР· Catalog - hashMapAddToBasket РЅРµ РЅСѓР¶РЅР°
+        String enterArticle = addGoodsToBasket(); // "РќР°РїРёС€РёС‚Рµ Р°СЂС‚РёРєСѓР» С‚РѕРІР°СЂ РґРѕР±Р°РІРёС‚СЃСЏ РІ РєРѕСЂР·РёРЅСѓ" "РёР»Рё РЅР°РїРёС€РёС‚Рµ: РќРµС‚"//
 
-        while (getYerOrNot(enterArticle)) { // проверяем ввод - Если не написано "Нет" или "нет" - цикл открывается, иначе выходим из цикла !
+        while (getYerOrNot(enterArticle)) { // РїСЂРѕРІРµСЂСЏРµРј РІРІРѕРґ - Р•СЃР»Рё РЅРµ РЅР°РїРёСЃР°РЅРѕ "РќРµС‚" РёР»Рё "РЅРµС‚" - С†РёРєР» РѕС‚РєСЂС‹РІР°РµС‚СЃСЏ, РёРЅР°С‡Рµ РІС‹С…РѕРґРёРј РёР· С†РёРєР»Р° !
 
             if(!getUserChoice(cmsAdmin, enterArticle)){
                 break;
@@ -33,16 +33,16 @@ public class ShopCartInetMag {
 /*
             if (!hashMapBasket.isEmpty()) {
                     String NotAdded = hashMapBasket.get(enterArticle);
-                    if (NotAdded.equals("Товар не добавлен!")) {
-                        hashMapBasket.put(enterArticle, "Товар добавлен!   ");
+                    if (NotAdded.equals("РўРѕРІР°СЂ РЅРµ РґРѕР±Р°РІР»РµРЅ!")) {
+                        hashMapBasket.put(enterArticle, "РўРѕРІР°СЂ РґРѕР±Р°РІР»РµРЅ!   ");
                     }
                 } else {
                     for (String keys : cmsAdmin.getMapArticle().keySet()) {
                         String valueKey = cmsAdmin.getMapArticle().get(keys);
                         if (valueKey.equals(enterArticle)) {
-                            hashMapBasket.put(valueKey, "Товар добавлен!   ");
+                            hashMapBasket.put(valueKey, "РўРѕРІР°СЂ РґРѕР±Р°РІР»РµРЅ!   ");
                         } else {
-                            hashMapBasket.put(valueKey, "Товар не добавлен!");
+                            hashMapBasket.put(valueKey, "РўРѕРІР°СЂ РЅРµ РґРѕР±Р°РІР»РµРЅ!");
                         }
                     }
                 }
@@ -55,46 +55,46 @@ public class ShopCartInetMag {
 
                 if(enterArticle.equals(valueMapArticle)){*/
             /*if(cmsAdmin.getMapArticle().containsKey(enterArticle)){
-                    // первый вариант
+                    // РїРµСЂРІС‹Р№ РІР°СЂРёР°РЅС‚
                     hashMapAddToBasket*/
-            //hashMapBasket.put(enterArticle, "Товар добавлен!   ");
+            //hashMapBasket.put(enterArticle, "РўРѕРІР°СЂ РґРѕР±Р°РІР»РµРЅ!   ");
             //hashMapBasket = hashMapAddToBasket;*/
 
-            // второй вариант
+            // РІС‚РѕСЂРѕР№ РІР°СЂРёР°РЅС‚
                    /*if(!hashMapAddToBasket.isEmpty()){
                         String NotAdded = hashMapAddToBasket.get(valueMapArticle);
-                        if(NotAdded.equals("Товар не добавлен!")){
-                                hashMapAddToBasket.put(valueMapArticle, "Товар добавлен!   ");
+                        if(NotAdded.equals("РўРѕРІР°СЂ РЅРµ РґРѕР±Р°РІР»РµРЅ!")){
+                                hashMapAddToBasket.put(valueMapArticle, "РўРѕРІР°СЂ РґРѕР±Р°РІР»РµРЅ!   ");
                         }
                     } else {
                         for (String keys: cmsAdmin.getMapArticle().keySet()) {
                             String valueKey = cmsAdmin.getMapArticle().get(keys);
                             if (valueKey.equals(enterArticle)) {
-                                hashMapAddToBasket.put(valueKey, "Товар добавлен!   ");
+                                hashMapAddToBasket.put(valueKey, "РўРѕРІР°СЂ РґРѕР±Р°РІР»РµРЅ!   ");
                             } else {
-                                hashMapAddToBasket.put(valueKey, "Товар не добавлен!");
+                                hashMapAddToBasket.put(valueKey, "РўРѕРІР°СЂ РЅРµ РґРѕР±Р°РІР»РµРЅ!");
                             }
                         }
                     }
                 } *//*else {
                     /*if(counter==lengthCMS){
-                        System.out.print("Товары не добавлены в корзину, артикул отсутствует в базе, повторите ввод");
+                        System.out.print("РўРѕРІР°СЂС‹ РЅРµ РґРѕР±Р°РІР»РµРЅС‹ РІ РєРѕСЂР·РёРЅСѓ, Р°СЂС‚РёРєСѓР» РѕС‚СЃСѓС‚СЃС‚РІСѓРµС‚ РІ Р±Р°Р·Рµ, РїРѕРІС‚РѕСЂРёС‚Рµ РІРІРѕРґ");
                     } else {
                         counter++;
                     }
                 }
             }*/
-        /*while(!enterArticle.equals("Нет") && !enterArticle.equals("нет")){
+        /*while(!enterArticle.equals("РќРµС‚") && !enterArticle.equals("РЅРµС‚")){
             if (!hashMapArticleBasket.containsKey(enterArticle)) {
-                System.out.println("Такого артикула нет для товара повторите ввод");
+                System.out.println("РўР°РєРѕРіРѕ Р°СЂС‚РёРєСѓР»Р° РЅРµС‚ РґР»СЏ С‚РѕРІР°СЂР° РїРѕРІС‚РѕСЂРёС‚Рµ РІРІРѕРґ");
                 setGoodsBasket(cmsAdmin);
             } else {
                 return setGoodsToTable = true;
             }
         } return setGoodsToTable = false;*/
-        /*if (!enterArticle.equals("Нет") && !enterArticle.equals("нет")) {
+        /*if (!enterArticle.equals("РќРµС‚") && !enterArticle.equals("РЅРµС‚")) {
             if (!hashMapArticle.containsKey(enterArticle)) {
-                System.out.println("Такого артикула нет для товара повторите ввод");
+                System.out.println("РўР°РєРѕРіРѕ Р°СЂС‚РёРєСѓР»Р° РЅРµС‚ РґР»СЏ С‚РѕРІР°СЂР° РїРѕРІС‚РѕСЂРёС‚Рµ РІРІРѕРґ");
                 setGoodsBasket(hashMapArticle);
             } else {
                 return true;
@@ -114,73 +114,73 @@ public class ShopCartInetMag {
     ArrayList <String> getArrayListOrders(){ return arrayListOrders; }
     HashMap <String,String> getHashMapPhone(){ return hashMapPhones; }
     boolean getYerOrNot(String enterArticle){
-        if(!enterArticle.equals("Нет") && !enterArticle.equals("нет")){
+        if(!enterArticle.equals("РќРµС‚") && !enterArticle.equals("РЅРµС‚")){
             return true;
         } else {
             return false;
         }
     }
     boolean orAddGoods(String userChoice){
-        if(userChoice.equals("Добавить") || userChoice.equals("добавить")){
+        if(userChoice.equals("Р”РѕР±Р°РІРёС‚СЊ") || userChoice.equals("РґРѕР±Р°РІРёС‚СЊ")){
             return true;
         } else {
             return false;
         }
     }
     boolean orDeleteGoods(String userChoice){
-        if(userChoice.equals("Удалить") || userChoice.equals("удалить")){
+        if(userChoice.equals("РЈРґР°Р»РёС‚СЊ") || userChoice.equals("СѓРґР°Р»РёС‚СЊ")){
             return true;
         } else {
             return false;
         }
     }
     boolean orExitGoods(String userChoice){
-        if(userChoice.equals("Выйти") || userChoice.equals("выйти")){
+        if(userChoice.equals("Р’С‹Р№С‚Рё") || userChoice.equals("РІС‹Р№С‚Рё")){
             return true;
         } else {
             return false;
         }
     }
     boolean orChange(String userChoice){
-        if(userChoice.equals("Изменить") || userChoice.equals("изменить")){
+        if(userChoice.equals("РР·РјРµРЅРёС‚СЊ") || userChoice.equals("РёР·РјРµРЅРёС‚СЊ")){
             return true;
         } else {
             return false;
         }
     }
     boolean getUserChoice(AdminCMS cmsAdmin, String enterArticle){
-        System.out.println("Напишите: \"добавить\" или \"удалить\" или \"выйти\"" );
+        System.out.println("РќР°РїРёС€РёС‚Рµ: \"РґРѕР±Р°РІРёС‚СЊ\" РёР»Рё \"СѓРґР°Р»РёС‚СЊ\" РёР»Рё \"РІС‹Р№С‚Рё\"" );
         String userChoice = new Scanner(System.in).nextLine();
 
         if(orAddGoods(userChoice)){
             if(cmsAdmin.getSortedMapArticle().containsKey(enterArticle)){
-                TreeMapBasket.put(enterArticle, "Товар добавлен!   ");;
+                TreeMapBasket.put(enterArticle, "РўРѕРІР°СЂ РґРѕР±Р°РІР»РµРЅ!   ");;
             } else {
                 doNotExistArticle();
             }
         } else if(orDeleteGoods(userChoice)){
             if(cmsAdmin.getSortedMapArticle().containsKey(enterArticle)){
-                TreeMapBasket.put(enterArticle, "Товар не добавлен!");
+                TreeMapBasket.put(enterArticle, "РўРѕРІР°СЂ РЅРµ РґРѕР±Р°РІР»РµРЅ!");
             } else {
                 doNotExistArticle();
             }
         } else if(orExitGoods(userChoice)){
             return false;
         } else {
-            System.out.println("Не правильно указали действие повторите еще раз!");
+            System.out.println("РќРµ РїСЂР°РІРёР»СЊРЅРѕ СѓРєР°Р·Р°Р»Рё РґРµР№СЃС‚РІРёРµ РїРѕРІС‚РѕСЂРёС‚Рµ РµС‰Рµ СЂР°Р·!");
             getUserChoice(cmsAdmin, enterArticle);
         }
         return true;
     }
     void doNotExistArticle(){
-        System.out.println("Такого артикула нет в базе данных, повторите ввод! ");
+        System.out.println("РўР°РєРѕРіРѕ Р°СЂС‚РёРєСѓР»Р° РЅРµС‚ РІ Р±Р°Р·Рµ РґР°РЅРЅС‹С…, РїРѕРІС‚РѕСЂРёС‚Рµ РІРІРѕРґ! ");
     }
     void setBasketMenu(){
         System.out.println();
         for(int i=0; i<70; i++){
             switch (i){
                 case 0,55 : System.out.print("|");break;
-                case 25   : System.out.print("Оформить заказ ");break;
+                case 25   : System.out.print("РћС„РѕСЂРјРёС‚СЊ Р·Р°РєР°Р· ");break;
                 default   : System.out.print(" ");
             }
         }
@@ -195,41 +195,41 @@ public class ShopCartInetMag {
         for(int i=0; i<70; i++){
             switch (i){
                 case 0,27 : System.out.print("|");break;
-                case 5   : System.out.print("Заказ  ");break;
-                case 12   : System.out.print("Кол-во");break;
-                case 17   : System.out.print("Цена  ");break;
-                case 19   : System.out.print("Сумма ");break;
-                case 23   : System.out.print("Адрес доставки,телефон");break;
+                case 5   : System.out.print("Р—Р°РєР°Р·  ");break;
+                case 12   : System.out.print("РљРѕР»-РІРѕ");break;
+                case 17   : System.out.print("Р¦РµРЅР°  ");break;
+                case 19   : System.out.print("РЎСѓРјРјР° ");break;
+                case 23   : System.out.print("РђРґСЂРµСЃ РґРѕСЃС‚Р°РІРєРё,С‚РµР»РµС„РѕРЅ");break;
                 default   : System.out.print(" ");
             }
         }
     }
-    // Начало - Оформление заказа
+    // РќР°С‡Р°Р»Рѕ - РћС„РѕСЂРјР»РµРЅРёРµ Р·Р°РєР°Р·Р°
     void setBasketGoods(AdminCMS cmsAdmin){
         System.out.println();
-        System.out.println("Оформить заказа: Да или Нет");
+        System.out.println("РћС„РѕСЂРјРёС‚СЊ Р·Р°РєР°Р·Р°: Р”Р° РёР»Рё РќРµС‚");
         String orYesNotOrder = new Scanner(System.in).nextLine();
 
         if(getTreeMapAddedGoods().isEmpty()){
             System.out.println();
-            notAddedToBasket(); // Вывод текста - товары не добавлены в корзину
-        } else if(!getTreeMapAddedGoods().isEmpty() && !getTreeMapAddedGoods().containsValue("Товар добавлен!   ")){
+            notAddedToBasket(); // Р’С‹РІРѕРґ С‚РµРєСЃС‚Р° - С‚РѕРІР°СЂС‹ РЅРµ РґРѕР±Р°РІР»РµРЅС‹ РІ РєРѕСЂР·РёРЅСѓ
+        } else if(!getTreeMapAddedGoods().isEmpty() && !getTreeMapAddedGoods().containsValue("РўРѕРІР°СЂ РґРѕР±Р°РІР»РµРЅ!   ")){
             System.out.println();
-            notAddedToBasket(); // Вывод текста - товары не добавлены в корзину
-        } else if(getYerOrNot(orYesNotOrder) && !orChange(orYesNotOrder)){// можно доделать добавить способ "Изменить" заказ - не стал делать думаю этого хватит на данный момент
-            setUserBasket(cmsAdmin); // Продолжение - Оформление заказа
+            notAddedToBasket(); // Р’С‹РІРѕРґ С‚РµРєСЃС‚Р° - С‚РѕРІР°СЂС‹ РЅРµ РґРѕР±Р°РІР»РµРЅС‹ РІ РєРѕСЂР·РёРЅСѓ
+        } else if(getYerOrNot(orYesNotOrder) && !orChange(orYesNotOrder)){// РјРѕР¶РЅРѕ РґРѕРґРµР»Р°С‚СЊ РґРѕР±Р°РІРёС‚СЊ СЃРїРѕСЃРѕР± "РР·РјРµРЅРёС‚СЊ" Р·Р°РєР°Р· - РЅРµ СЃС‚Р°Р» РґРµР»Р°С‚СЊ РґСѓРјР°СЋ СЌС‚РѕРіРѕ С…РІР°С‚РёС‚ РЅР° РґР°РЅРЅС‹Р№ РјРѕРјРµРЅС‚
+            setUserBasket(cmsAdmin); // РџСЂРѕРґРѕР»Р¶РµРЅРёРµ - РћС„РѕСЂРјР»РµРЅРёРµ Р·Р°РєР°Р·Р°
         } else {
-            System.out.println("Оформление заказа было отменено!");
+            System.out.println("РћС„РѕСЂРјР»РµРЅРёРµ Р·Р°РєР°Р·Р° Р±С‹Р»Рѕ РѕС‚РјРµРЅРµРЅРѕ!");
         }
     }
-    // Вывод текста - товары не добавлены в корзину
+    // Р’С‹РІРѕРґ С‚РµРєСЃС‚Р° - С‚РѕРІР°СЂС‹ РЅРµ РґРѕР±Р°РІР»РµРЅС‹ РІ РєРѕСЂР·РёРЅСѓ
     void notAddedToBasket(){
         for(int i=0; i<70; i++){
             if(i==0 || i==41){
                 System.out.print("|");
             }
             else if(i==20){
-                System.out.print("товары не добавлены в корзину");
+                System.out.print("С‚РѕРІР°СЂС‹ РЅРµ РґРѕР±Р°РІР»РµРЅС‹ РІ РєРѕСЂР·РёРЅСѓ");
             } else {
                 System.out.print(" ");
             }
@@ -239,38 +239,38 @@ public class ShopCartInetMag {
             System.out.print("-");
         }
     }
-    // Продолжение - Оформление заказа
+    // РџСЂРѕРґРѕР»Р¶РµРЅРёРµ - РћС„РѕСЂРјР»РµРЅРёРµ Р·Р°РєР°Р·Р°
     void setUserBasket(AdminCMS cmsAdmin){
         HashMap<String,String> hashMapName = cmsAdmin.getMapName();
         HashMap<String,String> hashMapPrice = cmsAdmin.getMapPrice();
         NavigableMap<String,String> hashMapAddedGoods = getTreeMapAddedGoods();
 
         //System.out.println();
-        System.out.println("Напишите адрес доставки - 25 букв");
+        System.out.println("РќР°РїРёС€РёС‚Рµ Р°РґСЂРµСЃ РґРѕСЃС‚Р°РІРєРё - 25 Р±СѓРєРІ");
         String userAddress = new Scanner(System.in).nextLine();
-        System.out.println("Напишите количество товаров - 5 цифр");
+        System.out.println("РќР°РїРёС€РёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ С‚РѕРІР°СЂРѕРІ - 5 С†РёС„СЂ");
         String numberOrder = new Scanner(System.in).nextLine();
-        System.out.println("Напишите номер телефона");
+        System.out.println("РќР°РїРёС€РёС‚Рµ РЅРѕРјРµСЂ С‚РµР»РµС„РѕРЅР°");
         String phoneNumber = new Scanner(System.in).nextLine();
-        System.out.println("Напишите артикул товара");
+        System.out.println("РќР°РїРёС€РёС‚Рµ Р°СЂС‚РёРєСѓР» С‚РѕРІР°СЂР°");
         String article = new Scanner(System.in).nextLine();
 
-        for(Map.Entry<String,String> entry: hashMapAddedGoods.entrySet()){ // артикул - "Товар добавлен!   "
+        for(Map.Entry<String,String> entry: hashMapAddedGoods.entrySet()){ // Р°СЂС‚РёРєСѓР» - "РўРѕРІР°СЂ РґРѕР±Р°РІР»РµРЅ!   "
             String key = entry.getKey();
             String value = entry.getValue();
-            if(value.equals("Товар добавлен!   ") && key.equals(article)){
-                for(Map.Entry<String,String> entryName: hashMapName.entrySet()){ // артикул - название товара
+            if(value.equals("РўРѕРІР°СЂ РґРѕР±Р°РІР»РµРЅ!   ") && key.equals(article)){
+                for(Map.Entry<String,String> entryName: hashMapName.entrySet()){ // Р°СЂС‚РёРєСѓР» - РЅР°Р·РІР°РЅРёРµ С‚РѕРІР°СЂР°
                     String keyName = entryName.getKey();
                     String valueName = entryName.getValue();
                     if(key.equals(keyName)){
-                        for(Map.Entry<String,String> entryPrice: hashMapPrice.entrySet()){ // артикул - цена
+                        for(Map.Entry<String,String> entryPrice: hashMapPrice.entrySet()){ // Р°СЂС‚РёРєСѓР» - С†РµРЅР°
                             String keyPrice = entryPrice.getKey();
                             String valuePrice = entryPrice.getValue();
                             if(key.equals(keyPrice)){
-                                hashMapAddress.put(key,userAddress);     // артикул - адрес
-                                hashMapNumberOrder.put(key,numberOrder); // артикул - кол-во товаров
-                                hashMapPhones.put(key,phoneNumber);      // артикул - телефон
-                                setTableBasket(key,valueName,numberOrder,valuePrice,userAddress,phoneNumber); // Таблица сформированного заказа
+                                hashMapAddress.put(key,userAddress);     // Р°СЂС‚РёРєСѓР» - Р°РґСЂРµСЃ
+                                hashMapNumberOrder.put(key,numberOrder); // Р°СЂС‚РёРєСѓР» - РєРѕР»-РІРѕ С‚РѕРІР°СЂРѕРІ
+                                hashMapPhones.put(key,phoneNumber);      // Р°СЂС‚РёРєСѓР» - С‚РµР»РµС„РѕРЅ
+                                setTableBasket(key,valueName,numberOrder,valuePrice,userAddress,phoneNumber); // РўР°Р±Р»РёС†Р° СЃС„РѕСЂРјРёСЂРѕРІР°РЅРЅРѕРіРѕ Р·Р°РєР°Р·Р°
                             }
                         }
                     }
@@ -278,13 +278,13 @@ public class ShopCartInetMag {
             }
         }
     }
-    // шапка таблицы заказа
+    // С€Р°РїРєР° С‚Р°Р±Р»РёС†С‹ Р·Р°РєР°Р·Р°
     void setOrder(){
         System.out.println();
         for(int i=0; i<70; i++){
             switch (i){
                 case 0,55 : System.out.print("|");break;
-                case 25   : System.out.print("Заказ оформлен ");break;
+                case 25   : System.out.print("Р—Р°РєР°Р· РѕС„РѕСЂРјР»РµРЅ ");break;
                 default   : System.out.print(" ");
             }
         }
@@ -292,16 +292,16 @@ public class ShopCartInetMag {
         for(int i=0; i<70; i++){
             switch (i){
                 case 0,27 : System.out.print("|");break;
-                case 5   : System.out.print("Заказ  ");break;
-                case 12   : System.out.print("Кол-во");break;
-                case 17   : System.out.print("Цена  ");break;
-                case 19   : System.out.print("Сумма ");break;
-                case 23   : System.out.print("Адрес доставки,телефон");break;
+                case 5   : System.out.print("Р—Р°РєР°Р·  ");break;
+                case 12   : System.out.print("РљРѕР»-РІРѕ");break;
+                case 17   : System.out.print("Р¦РµРЅР°  ");break;
+                case 19   : System.out.print("РЎСѓРјРјР° ");break;
+                case 23   : System.out.print("РђРґСЂРµСЃ РґРѕСЃС‚Р°РІРєРё,С‚РµР»РµС„РѕРЅ");break;
                 default   : System.out.print(" ");
             }
         }
     }
-    // Таблица сформированного заказа
+    // РўР°Р±Р»РёС†Р° СЃС„РѕСЂРјРёСЂРѕРІР°РЅРЅРѕРіРѕ Р·Р°РєР°Р·Р°
     void setTableBasket(String key, String valueName, String numberOrder, String valuePrice, String userAddress, String phoneNumber){
         int lItems;
         int counterNumber = -1,
@@ -311,11 +311,11 @@ public class ShopCartInetMag {
             counterEnd = -1;
         String sum="";
 
-        // шапка таблицы заказа - Начало
+        // С€Р°РїРєР° С‚Р°Р±Р»РёС†С‹ Р·Р°РєР°Р·Р° - РќР°С‡Р°Р»Рѕ
         setOrder();
-        // - Конец
+        // - РљРѕРЅРµС†
 
-        // Вывод заказа на просмотр
+        // Р’С‹РІРѕРґ Р·Р°РєР°Р·Р° РЅР° РїСЂРѕСЃРјРѕС‚СЂ
         System.out.println();
         for(int i=0; i<70; i++){
             System.out.print("-");
@@ -365,46 +365,46 @@ public class ShopCartInetMag {
             if(counterEnd==i){
                 System.out.print("|");
             }
-            arrayListOrders.add(phoneNumber+";артикул"+key+";заказ- "+valueName+";Кол-во-"+numberOrder+";цена-  "+valuePrice+";сумма- "+sum+";адрес- "+userAddress);
+            arrayListOrders.add(phoneNumber+";Р°СЂС‚РёРєСѓР»"+key+";Р·Р°РєР°Р·- "+valueName+";РљРѕР»-РІРѕ-"+numberOrder+";С†РµРЅР°-  "+valuePrice+";СЃСѓРјРјР°- "+sum+";Р°РґСЂРµСЃ- "+userAddress);
         }
         System.out.println();
         for(int i=0; i<70; i++){
             System.out.print("-");
         }
     }
-    // Корзина - показ всех заказов
+    // РљРѕСЂР·РёРЅР° - РїРѕРєР°Р· РІСЃРµС… Р·Р°РєР°Р·РѕРІ
     void setMainTableBasket(AdminCMS cmsAdmin){
         HashMap<String,String> hashMapName = cmsAdmin.getMapName();
         HashMap<String,String> hashMapPrice = cmsAdmin.getMapPrice();
         TreeMap<String,String> hashMapAddedGoods = getTreeMapAddedGoods();
 
         System.out.println();
-        System.out.println("Напишите номер телефона для просмотра вашего заказа");
+        System.out.println("РќР°РїРёС€РёС‚Рµ РЅРѕРјРµСЂ С‚РµР»РµС„РѕРЅР° РґР»СЏ РїСЂРѕСЃРјРѕС‚СЂР° РІР°С€РµРіРѕ Р·Р°РєР°Р·Р°");
         String userPhone = new Scanner(System.in).nextLine();
 
         if(getHashMapPhone().containsValue(userPhone)){
             System.out.println();
-            for(Map.Entry<String, String> entryPhone: getHashMapPhone().entrySet()){ // артикул - телефон
+            for(Map.Entry<String, String> entryPhone: getHashMapPhone().entrySet()){ // Р°СЂС‚РёРєСѓР» - С‚РµР»РµС„РѕРЅ
                 String key = entryPhone.getKey();
                 String phoneNumber = entryPhone.getValue();
                 if(userPhone.equals(phoneNumber)){
-                    for(Map.Entry<String, String> entryName: hashMapName.entrySet()) { // артикул - название товара
+                    for(Map.Entry<String, String> entryName: hashMapName.entrySet()) { // Р°СЂС‚РёРєСѓР» - РЅР°Р·РІР°РЅРёРµ С‚РѕРІР°СЂР°
                         String keyName = entryName.getKey();
                         String valueName = entryName.getValue();
                         if (key.equals(keyName)) {
-                            for(Map.Entry<String, String> entryOrder: getHashMapNumberOrder().entrySet()) { // артикул - кол-во заказа
+                            for(Map.Entry<String, String> entryOrder: getHashMapNumberOrder().entrySet()) { // Р°СЂС‚РёРєСѓР» - РєРѕР»-РІРѕ Р·Р°РєР°Р·Р°
                                 String keyOrder = entryOrder.getKey();
                                 String numberOrder = entryOrder.getValue();
                                 if(key.equals(keyOrder)){
-                                    for(Map.Entry<String, String> entryPrice: hashMapPrice.entrySet()){ // артикул - цена
+                                    for(Map.Entry<String, String> entryPrice: hashMapPrice.entrySet()){ // Р°СЂС‚РёРєСѓР» - С†РµРЅР°
                                         String keyPrice = entryPrice.getKey();
                                         String valuePrice = entryPrice.getValue();
                                         if(key.equals(keyPrice)){
-                                            for(Map.Entry<String, String> entryAddress: getHashMapAddress().entrySet()){ // артикул - адрес
+                                            for(Map.Entry<String, String> entryAddress: getHashMapAddress().entrySet()){ // Р°СЂС‚РёРєСѓР» - Р°РґСЂРµСЃ
                                                 String keyAddress = entryAddress.getKey();
                                                 String userAddress = entryAddress.getValue();
                                                 if(key.equals(keyAddress)){
-                                                    setTableBasket(key, valueName, numberOrder, valuePrice, userAddress, phoneNumber); // Таблица сформированного заказа
+                                                    setTableBasket(key, valueName, numberOrder, valuePrice, userAddress, phoneNumber); // РўР°Р±Р»РёС†Р° СЃС„РѕСЂРјРёСЂРѕРІР°РЅРЅРѕРіРѕ Р·Р°РєР°Р·Р°
                                                 }
                                             }
                                         }
@@ -415,25 +415,25 @@ public class ShopCartInetMag {
                     }
                 }
             }
-        } else if(getTreeMapAddedGoods().containsValue("Товар добавлен!   ")){
+        } else if(getTreeMapAddedGoods().containsValue("РўРѕРІР°СЂ РґРѕР±Р°РІР»РµРЅ!   ")){
             System.out.println();
             notAddedToBasket();
             String numberOrder = "0";
-            String userAddress = "Нет";
-            String phoneNumber = "Нет";
-            for(Map.Entry<String,String> entry: hashMapAddedGoods.entrySet()){ // артикул - "Товар добавлен!   "
+            String userAddress = "РќРµС‚";
+            String phoneNumber = "РќРµС‚";
+            for(Map.Entry<String,String> entry: hashMapAddedGoods.entrySet()){ // Р°СЂС‚РёРєСѓР» - "РўРѕРІР°СЂ РґРѕР±Р°РІР»РµРЅ!   "
                 String key = entry.getKey();
                 String value = entry.getValue();
-                if(value.equals("Товар добавлен!   ")){
-                    for(Map.Entry<String,String> entryName: hashMapName.entrySet()){ // артикул - название товара
+                if(value.equals("РўРѕРІР°СЂ РґРѕР±Р°РІР»РµРЅ!   ")){
+                    for(Map.Entry<String,String> entryName: hashMapName.entrySet()){ // Р°СЂС‚РёРєСѓР» - РЅР°Р·РІР°РЅРёРµ С‚РѕРІР°СЂР°
                         String keyName = entryName.getKey();
                         String valueName = entryName.getValue();
                         if(key.equals(keyName)){
-                            for(Map.Entry<String,String> entryPrice: hashMapPrice.entrySet()){ // артикул - цена
+                            for(Map.Entry<String,String> entryPrice: hashMapPrice.entrySet()){ // Р°СЂС‚РёРєСѓР» - С†РµРЅР°
                                 String keyPrice = entryPrice.getKey();
                                 String valuePrice = entryPrice.getValue();
                                 if(key.equals(keyPrice)){
-                                    setTableBasket(key,valueName,numberOrder,valuePrice,userAddress,phoneNumber); // Таблица сформированного заказа
+                                    setTableBasket(key,valueName,numberOrder,valuePrice,userAddress,phoneNumber); // РўР°Р±Р»РёС†Р° СЃС„РѕСЂРјРёСЂРѕРІР°РЅРЅРѕРіРѕ Р·Р°РєР°Р·Р°
                                 }
                             }
                         }
@@ -441,10 +441,10 @@ public class ShopCartInetMag {
                 }
             }
             System.out.println();
-            System.out.println("Не заполнили Кол-во, Адрес и номер телефона");
-            System.out.println("Заказа не оформлен!");
+            System.out.println("РќРµ Р·Р°РїРѕР»РЅРёР»Рё РљРѕР»-РІРѕ, РђРґСЂРµСЃ Рё РЅРѕРјРµСЂ С‚РµР»РµС„РѕРЅР°");
+            System.out.println("Р—Р°РєР°Р·Р° РЅРµ РѕС„РѕСЂРјР»РµРЅ!");
         } else {
-            System.out.println("Товары не добавлены в корзину");
+            System.out.println("РўРѕРІР°СЂС‹ РЅРµ РґРѕР±Р°РІР»РµРЅС‹ РІ РєРѕСЂР·РёРЅСѓ");
         }
     }
 }
