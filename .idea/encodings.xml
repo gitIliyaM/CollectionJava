@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/src/ArrayList/MainArrayList.java" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/src/ComparableComparator/Dodelat.java" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/src/HashMap/HashMaps.java" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/src/HashMap/MainHashMap.java" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/src/HashSet_LinkedHashSet/Poem.java" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/src/LinkedList/MainArrayLinked.java" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/src/SortedMapNavigableMapTreeMap/AccountInetMag.java" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/src/SortedMapNavigableMapTreeMap/AdminCMS.java" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/src/SortedMapNavigableMapTreeMap/CatalogInetMag.java" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/src/SortedMapNavigableMapTreeMap/MainInetMag.java" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/src/SortedMapNavigableMapTreeMap/ShopCartInetMag.java" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/src/SortedNavigableTreeSet/MainSortedNavigableTreeSet.java" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/src/SortedNavigableTreeSet/Student.java" charset="windows-1251" />
+  </component>
+</project>
