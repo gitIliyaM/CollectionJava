@@ -34,7 +34,7 @@ public class Dodelat {
         }
 
         static int scanner() {
-            System.out.println("введите любое целое число");
+            System.out.println("РІРІРµРґРёС‚Рµ Р»СЋР±РѕРµ С†РµР»РѕРµ С‡РёСЃР»Рѕ");
             Scanner scanner = new Scanner(System.in);
             int i;
             return i = scanner.nextInt();
