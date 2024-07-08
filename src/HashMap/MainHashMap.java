@@ -6,7 +6,7 @@ public class MainHashMap {
     public static void main(String[] args) {
         HashMaps hashMaps = new HashMaps();
 
-        for(String textYesOrNo = textBegin(); !textYesOrNo.equals("Нет"); textYesOrNo = textBegin()){
+        for(String textYesOrNo = textBegin(); !textYesOrNo.equals("РќРµС‚"); textYesOrNo = textBegin()){
 
             hashMaps.setHashMapNames();
             hashMaps.getHashMaps();
@@ -14,13 +14,13 @@ public class MainHashMap {
         }
     }
     static String textBegin(){
-        System.out.println("Необходимо написать пароль, имя и оценку");
-        System.out.println("Будете вводить данные Студентов? Да или Нет");
+        System.out.println("РќРµРѕР±С…РѕРґРёРјРѕ РЅР°РїРёСЃР°С‚СЊ РїР°СЂРѕР»СЊ, РёРјСЏ Рё РѕС†РµРЅРєСѓ");
+        System.out.println("Р‘СѓРґРµС‚Рµ РІРІРѕРґРёС‚СЊ РґР°РЅРЅС‹Рµ РЎС‚СѓРґРµРЅС‚РѕРІ? Р”Р° РёР»Рё РќРµС‚");
         String scanner = new Scanner(System.in).nextLine();
         return scanner;
     }
     static String textMiddleGrade(){
-        System.out.println("Вывести среднюю оценку студента? Да или Нет");
+        System.out.println("Р’С‹РІРµСЃС‚Рё СЃСЂРµРґРЅСЋСЋ РѕС†РµРЅРєСѓ СЃС‚СѓРґРµРЅС‚Р°? Р”Р° РёР»Рё РќРµС‚");
         String scanner = new Scanner(System.in).nextLine();
         return scanner;
     }
