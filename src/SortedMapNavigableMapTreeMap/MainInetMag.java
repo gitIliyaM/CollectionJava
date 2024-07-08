@@ -10,15 +10,15 @@ public class MainInetMag {
         ShopCartInetMag shopCart = new ShopCartInetMag();
         AdminCMS cmsAdmin = new AdminCMS();
         String scan=scanner();
-        if(scan.equals("Каталог") || scan.equals("каталог")) {
+        if(scan.equals("РљР°С‚Р°Р»РѕРі") || scan.equals("РєР°С‚Р°Р»РѕРі")) {
             mainMenu();
             catalog.setCatalogMenu();
             catalog.setCatalogGoods(cmsAdmin, shopCart);
-        } else if(scan.equals("Личный кабинет") || scan.equals("личный кабинет")) {
+        } else if(scan.equals("Р›РёС‡РЅС‹Р№ РєР°Р±РёРЅРµС‚") || scan.equals("Р»РёС‡РЅС‹Р№ РєР°Р±РёРЅРµС‚")) {
             mainMenu();
             personalAccount.setUserLKMenu();
             personalAccount.setUserEntry();
-        } else if(scan.equals("Корзина") || scan.equals("корзина")) {
+        } else if(scan.equals("РљРѕСЂР·РёРЅР°") || scan.equals("РєРѕСЂР·РёРЅР°")) {
             mainMenu();
             shopCart.setBasketMenu();
             shopCart.setMainTableBasket(cmsAdmin);
@@ -29,9 +29,9 @@ public class MainInetMag {
     }
     static String scanner(){
         System.out.println();
-        System.out.println("Выберите и напишите раздел из Меню!");
-        System.out.println("прекратить покупку - ввести букву - X");
-        System.out.println("Вход в cms - логин: админ");
+        System.out.println("Р’С‹Р±РµСЂРёС‚Рµ Рё РЅР°РїРёС€РёС‚Рµ СЂР°Р·РґРµР» РёР· РњРµРЅСЋ!");
+        System.out.println("РїСЂРµРєСЂР°С‚РёС‚СЊ РїРѕРєСѓРїРєСѓ - РІРІРµСЃС‚Рё Р±СѓРєРІСѓ - X");
+        System.out.println("Р’С…РѕРґ РІ cms - Р»РѕРіРёРЅ: Р°РґРјРёРЅ");
         String scanner = new Scanner(System.in).nextLine();
         return scanner;
     }
@@ -43,9 +43,9 @@ public class MainInetMag {
         for(int i=0; i<70; i++){
             switch (i){
                 case 0,44 : System.out.print("|");break;
-                case 10   : System.out.print("Каталог");break;
-                case 20   : System.out.print("Личный кабинет");break;
-                case 30   : System.out.print("Корзина");break;
+                case 10   : System.out.print("РљР°С‚Р°Р»РѕРі");break;
+                case 20   : System.out.print("Р›РёС‡РЅС‹Р№ РєР°Р±РёРЅРµС‚");break;
+                case 30   : System.out.print("РљРѕСЂР·РёРЅР°");break;
                 default   : System.out.print(" ");
             }
         }
@@ -55,21 +55,21 @@ public class MainInetMag {
         }
     }
     static void setDataCMS(AdminCMS cmsAdmin){
-        System.out.println("Вход в CMS сайта (пароль: админ)");
-        System.out.println("Введите пароль или напишите - Нет");
+        System.out.println("Р’С…РѕРґ РІ CMS СЃР°Р№С‚Р° (РїР°СЂРѕР»СЊ: Р°РґРјРёРЅ)");
+        System.out.println("Р’РІРµРґРёС‚Рµ РїР°СЂРѕР»СЊ РёР»Рё РЅР°РїРёС€РёС‚Рµ - РќРµС‚");
         String orPasswordStop = new Scanner(System.in).nextLine();
-        if(orPasswordStop.equals("админ")){
+        if(orPasswordStop.equals("Р°РґРјРёРЅ")){
             do {
-                System.out.println("Продолжить ввод данных - Да или Нет");
+                System.out.println("РџСЂРѕРґРѕР»Р¶РёС‚СЊ РІРІРѕРґ РґР°РЅРЅС‹С… - Р”Р° РёР»Рё РќРµС‚");
                 orPasswordStop = new Scanner(System.in).nextLine();
 
                 switch (orPasswordStop){
-                    case "Да","да","ДА" : cmsAdmin.setDataCMS();
+                    case "Р”Р°","РґР°","Р”Рђ" : cmsAdmin.setDataCMS();
                 }
 
                 switch (orPasswordStop){
-                    case "Нет","нет","НЕТ" :
-                        String deleteYesOrNo = scannerYesOrNo(); // "Удалить товары из базы банных - Да или Нет?"
+                    case "РќРµС‚","РЅРµС‚","РќР•Рў" :
+                        String deleteYesOrNo = scannerYesOrNo(); // "РЈРґР°Р»РёС‚СЊ С‚РѕРІР°СЂС‹ РёР· Р±Р°Р·С‹ Р±Р°РЅРЅС‹С… - Р”Р° РёР»Рё РќРµС‚?"
                         while(yesYep(deleteYesOrNo)){
                             if(!cmsAdmin.checkDataCMS()){
                                 break;
@@ -78,28 +78,28 @@ public class MainInetMag {
                             }
                         }
                 }
-            } while (noNot(orPasswordStop)); // !orPasswordStop.equals("Нет")
+            } while (noNot(orPasswordStop)); // !orPasswordStop.equals("РќРµС‚")
         } else if(noNot(orPasswordStop)){
-                System.out.println("Ввели не правильный пароль, повторите ввод пароля!");
+                System.out.println("Р’РІРµР»Рё РЅРµ РїСЂР°РІРёР»СЊРЅС‹Р№ РїР°СЂРѕР»СЊ, РїРѕРІС‚РѕСЂРёС‚Рµ РІРІРѕРґ РїР°СЂРѕР»СЏ!");
                 setDataCMS(cmsAdmin);
         }
     }
     static boolean yesYep(String deleteYesOrNo){
-        if(deleteYesOrNo.equals("Да") || deleteYesOrNo.equals("да") || deleteYesOrNo.equals("ДА")){
+        if(deleteYesOrNo.equals("Р”Р°") || deleteYesOrNo.equals("РґР°") || deleteYesOrNo.equals("Р”Рђ")){
             return true;
         } else {
             return false;
         }
     }
     static boolean noNot(String orPasswordStop){
-        if(!orPasswordStop.equals("Нет") && !orPasswordStop.equals("нет") && !orPasswordStop.equals("НЕТ")){
+        if(!orPasswordStop.equals("РќРµС‚") && !orPasswordStop.equals("РЅРµС‚") && !orPasswordStop.equals("РќР•Рў")){
             return true;
         } else {
             return false;
         }
     }
     static String scannerYesOrNo(){
-        System.out.println("Удалить товары из базы банных - Да или Нет?");
+        System.out.println("РЈРґР°Р»РёС‚СЊ С‚РѕРІР°СЂС‹ РёР· Р±Р°Р·С‹ Р±Р°РЅРЅС‹С… - Р”Р° РёР»Рё РќРµС‚?");
         Scanner scanner = new Scanner(System.in);
         String deleteYesOrNo = scanner.nextLine();
         return deleteYesOrNo;
